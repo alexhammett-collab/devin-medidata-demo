@@ -68,7 +68,7 @@ function TypingTerminal({
   }, [visibleCount]);
 
   return (
-    <div ref={containerRef} className="p-4 h-[420px] overflow-y-auto font-mono text-xs leading-relaxed">
+    <div ref={containerRef} className="p-3 sm:p-4 h-[320px] sm:h-[420px] overflow-y-auto overflow-x-hidden font-mono text-[10px] sm:text-xs leading-relaxed">
       {lines.slice(0, visibleCount).map((l, i) => (
         <div key={i} className={l.color}>{l.text || "\u00A0"}</div>
       ))}
@@ -92,27 +92,27 @@ function SNOWIncidentForm() {
           <div className="w-3 h-3 rounded-full bg-yellow-500" />
           <div className="w-3 h-3 rounded-full bg-green-500" />
         </div>
-        <div className="flex-1 bg-[#1a2b2d] rounded px-3 py-1 text-xs text-gray-300 font-mono">
+        <div className="flex-1 bg-[#1a2b2d] rounded px-3 py-1 text-xs text-gray-300 font-mono truncate">
           medidata.service-now.com/incident.do?sys_id=INC0041892
         </div>
       </div>
-      <div className="bg-[#32474a] px-4 py-1.5 flex items-center gap-4 text-xs text-white/70">
+      <div className="bg-[#32474a] px-4 py-1.5 flex items-center gap-4 text-xs text-white/70 overflow-x-auto">
         <span className="font-semibold text-white">ServiceNow</span>
         <span>Incident</span>
         <span>CMDB</span>
         <span>Change</span>
-        <span>Knowledge</span>
+        <span className="hidden sm:inline">Knowledge</span>
       </div>
-      <div className="bg-gray-50 border-b px-5 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+      <div className="bg-gray-50 border-b px-3 sm:px-5 py-3 flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <h3 className="text-sm font-bold text-gray-800">INC0041892</h3>
           <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-700">P1 — Critical</span>
           <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700">New → In Progress</span>
         </div>
         <div className="text-[10px] text-gray-400">Opened: 2025-01-15 14:28:03 UTC</div>
       </div>
-      <div className="p-5 space-y-3 text-xs">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="p-3 sm:p-5 space-y-3 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <Field icon={<Tag size={12} className="text-gray-400" />} label="Number" value="INC0041892" />
           <Field icon={<AlertTriangle size={12} className="text-gray-400" />} label="Priority" value="1 — Critical" bold red />
           <Field icon={<Layers size={12} className="text-gray-400" />} label="Category" value="Application — Data Sync" />
@@ -150,9 +150,9 @@ function Field({ icon, label, value, bold, red, purple }: {
   icon: React.ReactNode; label: string; value: string; bold?: boolean; red?: boolean; purple?: boolean;
 }) {
   return (
-    <div className="flex items-center gap-2">
-      {icon}
-      <span className="text-gray-400 w-24 flex-shrink-0">{label}:</span>
+    <div className="flex items-center gap-2 min-w-0">
+      <span className="flex-shrink-0">{icon}</span>
+      <span className="text-gray-400 w-20 sm:w-24 flex-shrink-0 text-[10px] sm:text-xs">{label}:</span>
       <span className={`${bold ? "font-bold" : ""} ${red ? "text-red-600" : purple ? "text-devin-purple font-semibold" : "text-gray-800"}`}>{value}</span>
     </div>
   );
@@ -341,19 +341,17 @@ function SNOWUpdated() {
           <div className="w-3 h-3 rounded-full bg-yellow-500" />
           <div className="w-3 h-3 rounded-full bg-green-500" />
         </div>
-        <div className="flex-1 bg-[#1a2b2d] rounded px-3 py-1 text-xs text-gray-300 font-mono">
+        <div className="flex-1 bg-[#1a2b2d] rounded px-3 py-1 text-xs text-gray-300 font-mono truncate">
           medidata.service-now.com/incident.do?sys_id=INC0041892
         </div>
       </div>
-      <div className="bg-gray-50 border-b px-5 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <h3 className="text-sm font-bold text-gray-800">INC0041892</h3>
-          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-700">P1</span>
-          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700">Analysis Complete</span>
-        </div>
+      <div className="bg-gray-50 border-b px-3 sm:px-5 py-3 flex flex-wrap items-center gap-2">
+        <h3 className="text-sm font-bold text-gray-800">INC0041892</h3>
+        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-700">P1</span>
+        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700">Analysis Complete</span>
       </div>
-      <div className="p-5 space-y-4 text-xs">
-        <div className="grid grid-cols-2 gap-3">
+      <div className="p-3 sm:p-5 space-y-4 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="flex items-center gap-2">
             <CheckCircle2 size={12} className="text-green-500" />
             <span className="text-gray-400 w-24">State:</span>
@@ -425,7 +423,7 @@ function DevinRecording() {
           <span className="text-[10px] text-red-400">12:32</span>
         </div>
       </div>
-      <div className="p-4 h-[360px] font-mono text-xs text-gray-300 space-y-1 overflow-hidden">
+      <div className="p-3 sm:p-4 h-[300px] sm:h-[360px] font-mono text-[10px] sm:text-xs text-gray-300 space-y-1 overflow-hidden">
         <div className="text-green-400">$ kubectl get pods -n rave-edc-eu</div>
         <div className="text-gray-400">NAME                              READY   STATUS    RESTARTS</div>
         <div className="text-gray-400">rave-edc-sync-7b9f4c6d8-x2kl4   1/1     Running   0</div>
@@ -533,14 +531,14 @@ function TeamsPost() {
                   <div className="text-gray-400 text-[10px] uppercase mb-1">Recommended Action</div>
                   <div className="text-gray-800">Immediate rollback to v2.14.2. Change request CHG0012456 auto-created.</div>
                 </div>
-                <div className="flex gap-2 pt-2">
-                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-devin-purple text-white text-[11px] font-semibold">
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-devin-purple text-white text-[10px] sm:text-[11px] font-semibold">
                     <PlayCircle size={12} /> Watch Recording
                   </button>
-                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-snow-green text-white text-[11px] font-semibold">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-snow-green text-white text-[10px] sm:text-[11px] font-semibold">
                     <ExternalLink size={12} /> Open in ServiceNow
                   </button>
-                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-gray-200 text-gray-700 text-[11px] font-semibold">
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-gray-200 text-gray-700 text-[10px] sm:text-[11px] font-semibold">
                     <CheckCircle2 size={12} /> Approve Rollback
                   </button>
                 </div>

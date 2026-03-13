@@ -27,7 +27,7 @@ const integrations = [
       "CMDB correlation for blast radius",
     ],
     mockUI: (
-      <div className="terminal-bg rounded-lg p-4 mt-4 text-xs">
+      <div className="terminal-bg rounded-lg p-3 sm:p-4 mt-4 text-[10px] sm:text-xs overflow-x-auto">
         <div className="flex items-center gap-1.5 mb-3">
           <div className="w-2 h-2 rounded-full bg-red-500" />
           <div className="w-2 h-2 rounded-full bg-yellow-500" />
@@ -37,15 +37,11 @@ const integrations = [
         <div className="space-y-1.5 font-mono">
           <div><span className="text-gray-500">State:</span> <span className="text-green-400">Analysis Complete</span></div>
           <div><span className="text-gray-500">Priority:</span> <span className="text-red-400">P1 — Critical</span></div>
-          <div><span className="text-gray-500">Assigned:</span> <span className="text-blue-400">Devin AI (Automated)</span></div>
+          <div><span className="text-gray-500">Assigned:</span> <span className="text-blue-400">Devin AI (Auto)</span></div>
           <div className="border-t border-gray-700 pt-1.5 mt-2">
             <span className="text-gray-500">Work Note:</span>
-            <div className="text-amber-300 mt-1 leading-relaxed">
-              Root cause identified: EU Rave EDC sync failure caused by<br />
-              misconfigured connection pool limit in deploy v2.14.3.<br />
-              Evidence: Sumologic error spike at 14:32 UTC correlates<br />
-              with deploy timestamp. Remediation: rollback to v2.14.2<br />
-              or apply hotfix PR #4721.
+            <div className="text-amber-300 mt-1 leading-relaxed break-words">
+              Root cause: EU Rave EDC sync failure caused by misconfigured connection pool limit in deploy v2.14.3. Sumologic error spike at 14:32 UTC correlates with deploy. Remediation: rollback to v2.14.2 or hotfix PR #4721.
             </div>
           </div>
         </div>
@@ -65,7 +61,7 @@ const integrations = [
       "Evidence export for audit trail",
     ],
     mockUI: (
-      <div className="terminal-bg rounded-lg p-4 mt-4 text-xs">
+      <div className="terminal-bg rounded-lg p-3 sm:p-4 mt-4 text-[10px] sm:text-xs overflow-x-auto">
         <div className="flex items-center gap-1.5 mb-3">
           <div className="w-2 h-2 rounded-full bg-red-500" />
           <div className="w-2 h-2 rounded-full bg-yellow-500" />
@@ -73,7 +69,7 @@ const integrations = [
           <span className="text-gray-500 ml-2 text-[10px]">Sumologic — Query Results</span>
         </div>
         <div className="font-mono space-y-1">
-          <div className="text-blue-400">_sourceCategory=prod/rave-edc/eu-west-1</div>
+          <div className="text-blue-400 truncate">_sourceCategory=prod/rave-edc/eu-west-1</div>
           <div className="text-gray-500">| where status_code &gt;= 500</div>
           <div className="text-gray-500">| timeslice 5m | count by _timeslice</div>
           <div className="border-t border-gray-700 pt-2 mt-2 space-y-1">
@@ -111,7 +107,7 @@ const integrations = [
       "Quick-action buttons for escalation",
     ],
     mockUI: (
-      <div className="bg-[#1b1a2e] rounded-lg p-4 mt-4 text-xs">
+      <div className="bg-[#1b1a2e] rounded-lg p-3 sm:p-4 mt-4 text-[10px] sm:text-xs">
         <div className="flex items-center gap-2 mb-3 pb-2 border-b border-white/10">
           <div className="w-5 h-5 rounded bg-teams-purple flex items-center justify-center">
             <MessageSquare size={10} className="text-white" />
@@ -135,7 +131,7 @@ const integrations = [
                   <span className="text-white/50">MTTR: 4m 32s • Confidence: High</span>
                 </div>
               </div>
-              <div className="flex gap-2 mt-3">
+              <div className="flex flex-wrap gap-2 mt-3">
                 <span className="px-2 py-1 rounded bg-devin-purple/20 text-devin-purple text-[10px] font-medium flex items-center gap-1">
                   <PlayCircle size={10} /> Watch Recording
                 </span>
@@ -224,7 +220,7 @@ export default function IntegrationSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 rounded-2xl bg-gradient-to-r from-medidata-navy to-medidata-dark p-8 lg:p-12"
+          className="mt-16 rounded-2xl bg-gradient-to-r from-medidata-navy to-medidata-dark p-5 sm:p-8 lg:p-12"
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
@@ -264,7 +260,7 @@ export default function IntegrationSection() {
                   <span className="text-[11px] text-red-400 font-medium">REC</span>
                   <span className="text-[11px] text-white/40 ml-auto">12:47</span>
                 </div>
-                <div className="p-4 font-mono text-xs space-y-2">
+                <div className="p-3 sm:p-4 font-mono text-[10px] sm:text-xs space-y-2 overflow-x-auto">
                   <div className="text-green-400">$ devin investigate INC0041892</div>
                   <div className="text-white/50">→ Loading incident context...</div>
                   <div className="text-white/50">→ Querying Sumologic logs (eu-west-1)...</div>

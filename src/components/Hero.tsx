@@ -127,7 +127,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="mt-14 grid grid-cols-3 gap-6"
+              className="mt-14 grid grid-cols-3 gap-4 sm:gap-6"
             >
               {[
                 { value: "< 5 min", label: "Avg. triage time" },
