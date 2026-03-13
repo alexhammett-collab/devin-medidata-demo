@@ -104,7 +104,7 @@ const integrations = [
     color: "bg-teams-purple",
     tagColor: "text-teams-purple bg-teams-purple/10",
     features: [
-      "Automated channel posting via webhook",
+      "Devin posts directly via webhook",
       "On-call team tagging (@mentions)",
       "Video recording link attachment",
       "Adaptive Cards with RCA summary",

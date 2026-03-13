@@ -86,10 +86,10 @@ const steps = [
     icon: MessageSquare,
     color: "bg-teams-purple",
     borderColor: "border-teams-purple/30",
-    label: "MS Teams Notification",
-    platform: "Microsoft Teams",
+    label: "Devin Posts to MS Teams",
+    platform: "Devin → Microsoft Teams",
     description:
-      "Devin posts a summary to the designated MS Teams incident channel, tags the on-call team, attaches the video recording link, and provides quick-action buttons — keeping everyone informed in real-time.",
+      "Devin directly posts a summary to the designated MS Teams incident channel, tags the on-call team, attaches the video recording link, and provides quick-action buttons — keeping everyone informed in real-time without any intermediary.",
     detail: "#incident-p1-alerts • @sre-oncall tagged • Video + RCA linked",
   },
   {
@@ -98,9 +98,9 @@ const steps = [
     color: "bg-medidata-teal",
     borderColor: "border-medidata-teal/30",
     label: "Trigger Follow-Up Actions",
-    platform: "ServiceNow Orchestration",
+    platform: "Devin → ServiceNow Orchestration",
     description:
-      "ServiceNow can use Devin's structured output to automatically trigger downstream actions: change requests, runbook execution, escalation workflows, or automated remediation — closing the loop end-to-end.",
+      "Devin's structured output posted back into ServiceNow can automatically trigger downstream actions: change requests, runbook execution, escalation workflows, or automated remediation — closing the loop end-to-end.",
     detail: "CHG0012456 auto-created • Remediation runbook queued • Escalation paused",
   },
 ];
