@@ -122,24 +122,6 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            {/* Stats bar */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.6 }}
-              className="mt-14 grid grid-cols-3 gap-4 sm:gap-6"
-            >
-              {[
-                { value: "< 5 min", label: "Avg. triage time" },
-                { value: "24/7", label: "Autonomous coverage" },
-                { value: "100%", label: "Audit documented" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-white/50 mt-1">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
           </div>
 
           {/* Right: Animated flow icons */}
