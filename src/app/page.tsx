@@ -5,7 +5,7 @@ import WorkflowSection from "@/components/WorkflowSection";
 import LiveDemoSection from "@/components/LiveDemoSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import IntegrationSection from "@/components/IntegrationSection";
-import ImpactSection from "@/components/ImpactSection";
+
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,7 +18,6 @@ export default function Home() {
       <LiveDemoSection />
       <CapabilitiesSection />
       <IntegrationSection />
-      <ImpactSection />
       <Footer />
     </>
   );
